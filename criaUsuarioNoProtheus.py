@@ -7,6 +7,9 @@ import selenium
 from selenium.webdriver.common.keys import Keys
 import time
 from selenium import webdriver
+import keyring
+####Necessário executar o keyring.set_password("adminprotheus","admin","senha do admin protheus")
+#####Este conjunto de chave fica salvo no sistema operacional
 
 driver = webdriver.Chrome()
 
@@ -17,12 +20,15 @@ driver = webdriver.Chrome()
 #informa endereço do smartclient web e autenticação
 link = f"https://s02ashm03.ferroport.com.br:8156/"
 usuario = 'admin'
-senha = 'P@ssw0rd2126#'
+senha = keyring.get_password("adminprotheus", "admin")
 programaInicial = 'sigacfg'
 ambiente = 'FRP_P12133_TESTE'
 usuarioOrigem = '002351' #Número do usuário
 usuarioDestino = 'acesso'
-senhaDestino = 'acesso00'
+senhaDestino = keyring.get_password("acessoprotheus", "acesso")
+
+print(senha)
+print(senhaDestino)
 
 driver.get(link)
 time.sleep(2) 
