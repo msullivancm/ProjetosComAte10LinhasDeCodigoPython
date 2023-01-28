@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: latin-1 -*-
+
 import keyring
 import subprocess
 
@@ -27,51 +30,51 @@ comandoSqlcmdDestino = f'sqlcmd -U bkp -P {senhaBanco} -S {hostDestino} -d {banc
 criaBackup = f'"BACKUP DATABASE [{banco}] \
 to disk = N\'{caminhoBackup}\' WITH NOFORMAT, INIT, NAME = N\'{nomeBackup}\', SKIP, \
 NOREWIND, NOUNLOAD, COMPRESSION, STATS = 10, COPY_ONLY, MAXTRANSFERSIZE = 131072"'
-print(comandoSqlcmd + criaBackup)
+subprocess.call(comandoSqlcmd + criaBackup)
 
 criaMapeamentoB = f'net use B: {servidorBackup} {senhaTotvs} /user:totvs /Persistent:No'
-print(criaMapeamentoB)
+subprocess.call(criaMapeamentoB)
 
-moveBackupParaB = f'move {caminhoBackup} B:\\'
-print(moveBackupParaB)
+moveBackupParaB = f'xcopy /y {caminhoBackup} B:\\'
+subprocess.call(moveBackupParaB)
 
 removeMapeamentoB = f'net use B: /delete /Y'
-print(removeMapeamentoB)
+subprocess.call(removeMapeamentoB)
 
 for s in servicos:
-    print(f'runas /savecred /user:master\\totvs \"sc {hostDestinoRede} stop {s}\"')
+    subprocess.call(f'runas /savecred /user:master\\totvs \"sc {hostDestinoRede} stop {s}\"')
 print("Derruba usuários logados")
 
 colocaBancoOffline = f'"ALTER DATABASE [{bancoDestino}] SET OFFLINE WITH ROLLBACK IMMEDIATE" -t 90 -s ; -W -e'
-print(comandoSqlcmdMaster + colocaBancoOffline)
+subprocess.call(comandoSqlcmdMaster + colocaBancoOffline)
 
 print("Restaura backup")
 restoreDatabaseDestino = f'"RESTORE DATABASE [{bancoDestino}] FILE = N\'{volumeDestino}\' FROM DISK = N\'{caminhoBackupDestino}\' WITH  FILE = 1, MOVE N\'{volumeDestino}\' TO N\'{bancoDestinoData}\', MOVE N\'{volumeDestinoLog}\' TO N\'{bancoDestinoLog}\', NOUNLOAD,  REPLACE,  STATS = 10"'
-print(comandoSqlcmdMaster + restoreDatabaseDestino)
+subprocess.call(comandoSqlcmdMaster + restoreDatabaseDestino)
 
 print("Muda o owner do banco para totvs")
 mudaOwner = f'"USE [{bancoDestino}] exec sp_changedbowner totvs" -t 90 -s ; -W -e '
-print(comandoSqlcmdMaster + mudaOwner)
+subprocess.call(comandoSqlcmdMaster + mudaOwner)
 
 print("Cria usuário de desenvolvimento somente leitura")
 criaUsuarioDesenvolvimento = f'"USE [{bancoDestino}] CREATE USER [desenv] FOR LOGIN [desenv] ALTER ROLE [db_datareader] ADD MEMBER [desenv]" -t 90 -s ; -W -e'
-print(comandoSqlcmdMaster + criaUsuarioDesenvolvimento)
+subprocess.call(comandoSqlcmdMaster + criaUsuarioDesenvolvimento)
 
 print("Altera status do banco para recovery")
 alteraBancoParaRecovery = f'"ALTER DATABASE [{bancoDestino}] SET RECOVERY SIMPLE WITH NO_WAIT" -t 90 -s ; -W -e'
-print(comandoSqlcmdMaster + alteraBancoParaRecovery)
+subprocess.call(comandoSqlcmdMaster + alteraBancoParaRecovery)
 
 print("Executa shrink do log")
 executaShrinkDoLog = f'"USE [{bancoDestino}] DBCC SHRINKFILE (N\'{volumeDestinoLog}\' , 0, TRUNCATEONLY)" -t 90 -s ; -W -e'
-print(comandoSqlcmdMaster + executaShrinkDoLog)
+subprocess.call(comandoSqlcmdMaster + executaShrinkDoLog)
 
 print("Executa script para bancos de homologação")
-print(comandoSqlcmdDestino + "TRUNCATE TABLE SCHDTSK;")
-print(comandoSqlcmdDestino + "TRUNCATE TABLE SXH;")
-print(comandoSqlcmdDestino + "DELETE FROM XX0 WHERE 1=1 AND R_E_C_N_O_ = '4' OR R_E_C_N_O_ = '5' OR R_E_C_N_O_ = '6' OR R_E_C_N_O_ = '7' OR R_E_C_N_O_ = '8'")
-print(comandoSqlcmdDestino + "UPDATE  XX0 SET XX0_IP =  '10.27.0.14', XX0_PORTA = '50061'")
-print(comandoSqlcmdDestino + "DELETE FROM XX1 WHERE XX1_CODIGO IN ('000024','000025','000026','000027','000028','000029', '000030', '000031', '000032', '000033', '000034', '000035') OR D_E_L_E_T_ = '*'")
-print(comandoSqlcmdDestino + "UPDATE  SYS_USR SET USR_EMAIL = ' ' WHERE USR_MSBLQL IN  ('1','2')")
+subprocess.call(comandoSqlcmdDestino + "\"TRUNCATE TABLE SCHDTSK\"")
+subprocess.call(comandoSqlcmdDestino + "\"TRUNCATE TABLE SXH\"")
+subprocess.call(comandoSqlcmdDestino + "\"DELETE FROM XX0 WHERE 1=1 AND R_E_C_N_O_ = '4' OR R_E_C_N_O_ = '5' OR R_E_C_N_O_ = '6' OR R_E_C_N_O_ = '7' OR R_E_C_N_O_ = '8'\"")
+subprocess.call(comandoSqlcmdDestino + "\"UPDATE  XX0 SET XX0_IP =  '10.27.0.14', XX0_PORTA = '50061'\"")
+subprocess.call(comandoSqlcmdDestino + "\"DELETE FROM XX1 WHERE XX1_CODIGO IN ('000024','000025','000026','000027','000028','000029', '000030', '000031', '000032', '000033', '000034', '000035') OR D_E_L_E_T_ = '*'\"")
+subprocess.call(comandoSqlcmdDestino + "\"UPDATE  SYS_USR SET USR_EMAIL = ' ' WHERE USR_MSBLQL IN  ('1','2')\"")
 
 for s in servicos:
-    print(f'runas /savecred /user:master\\totvs \"sc {hostDestinoRede} start {s}\"')
+    subprocess.call(f'runas /savecred /user:master\\totvs \"sc {hostDestinoRede} start {s}\"')
