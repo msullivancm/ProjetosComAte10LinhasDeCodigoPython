@@ -13,7 +13,7 @@ print(f'Tennho {QuantoTenhoEmBitcoins} na minha carteira digital.')
 
 req = requests.get(link)
 
-btcEmreais = float(req.json()['BTCBRL']['bid'])*1000
+btcEmreais = float(req.json()['BTCBRL']['bid'])
 print(f'Valor do Bitcoin em reais na cotação de hoje R${moeda(btcEmreais)}')
 
 QuantoTenhoEmReais = QuantoTenhoEmBitcoins * btcEmreais
