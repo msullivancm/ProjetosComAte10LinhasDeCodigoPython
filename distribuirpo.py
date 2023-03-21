@@ -220,6 +220,9 @@ def substCaminhoRpo(aInis,dirDataHoraDestApos,arqIni):
     aArquivo=[]
 
     appserverini=[]
+    
+    bkpInis = shutil.make_archive(f"{dirOrigApo}\\bkpzipdes", 'zip', dirInis)
+    print(bkpInis)
 
     for d in aInis:
 
@@ -228,50 +231,42 @@ def substCaminhoRpo(aInis,dirDataHoraDestApos,arqIni):
         try: 
             print(ini)
 
-            with open(ini,'r+') as arquivo:
+            appserverini = ConfigParser.ConfigParser()
 
-                appserverini = ConfigParser.ConfigParser()
+            try:
+                appserverini.read(ini)
 
-                try:
-                    appserverini.read(ini)
+            except Exception as err:
+                print(bcolors.FAIL + "Houve erro neste arquivo. O log estará no mesmo diretório." + bcolors.ENDC)
+                print(err)
+                with open(ini + "-error",'w') as file_error:
+                    file_error.write(err.message)
 
-                except Exception as err:
-                    print(bcolors.FAIL + "Houve erro neste arquivo. O log estará no mesmo diretório." + bcolors.ENDC)
-                    print(err)
-                    with open(ini + "-error",'w') as file_error:
-                        file_error.write(err.message)
+            for key in aChave:
 
-                for key in aChave:
+                for section in appserverini.sections():
 
-                    for section in appserverini.sections():
+                    if appserverini.has_option(section,key):
 
-                        if appserverini.has_option(section,key):
+                        try: 
 
-                            try: 
+                            if 'custom' in key:
 
-                                if 'custom' in key:
+                                for c in aArqApo:
 
-                                    for c in aArqApo:
+                                    if 'custom' in c: 
 
-                                        if 'custom' in c: 
+                                        appserverini.set(section,key,f'{dirDataHoraDestApos}\{c}')
 
-                                            appserverini.set(section,key,f'{dirDataHoraDestApos}\{c}')
+                            else: 
 
-                                else: 
+                                appserverini.set(section,key,dirDataHoraDestApos)
 
-                                    appserverini.set(section,key,dirDataHoraDestApos)
-
-                            except OSError as err:
-                                print(err)
-
-                appserverini.write(arquivo)
-
-                """ gravaIni = open(ini, 'w')
-
-                config.write(gravaIni)
-
-                gravaIni.close() """
-
+                        except OSError as err:
+                            print(err)
+            with open(ini,'w') as arquivoini:
+                appserverini.write(arquivoini)
+                            
         except OSError as err:
             print(err)
 
