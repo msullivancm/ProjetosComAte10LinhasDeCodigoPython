@@ -1,5 +1,5 @@
-(['C:\\Users\\Sullivan\\source\\ProjetosComAte10LinhasDeCodigoPython\\distribuirpo.py'],
- ['C:\\Users\\Sullivan\\source\\ProjetosComAte10LinhasDeCodigoPython'],
+(['c:\\Users\\Sullivan\\source\\ProjetosComAte10LinhasDeCodigoPython\\distribuirpo.py'],
+ ['c:\\Users\\Sullivan\\source\\ProjetosComAte10LinhasDeCodigoPython'],
  ['codecs'],
  ['C:\\Users\\Sullivan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks',
   'C:\\Users\\Sullivan\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks\\__pycache__',
@@ -559,9 +559,9 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\Lib\\multiprocessing\\__init__.py',
    'PYMODULE'),
-  ('tracemalloc',
+  ('_py_abc',
    'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\Lib\\tracemalloc.py',
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\Lib\\_py_abc.py',
    'PYMODULE'),
   ('stringprep',
    'C:\\Program '
@@ -595,9 +595,9 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\Lib\\http\\cookiejar.py',
    'PYMODULE'),
-  ('_py_abc',
+  ('tracemalloc',
    'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\Lib\\_py_abc.py',
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\Lib\\tracemalloc.py',
    'PYMODULE'),
   ('configparser',
    'C:\\Program '
@@ -753,6 +753,6 @@
  [],
  [],
  [('base_library.zip',
-   'C:\\Users\\Sullivan\\source\\ProjetosComAte10LinhasDeCodigoPython\\build\\distribuirpo\\base_library.zip',
+   'c:\\Users\\Sullivan\\source\\ProjetosComAte10LinhasDeCodigoPython\\build\\distribuirpo\\base_library.zip',
    'DATA')],
  [])
