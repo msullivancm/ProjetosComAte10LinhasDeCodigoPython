@@ -559,6 +559,14 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\Lib\\multiprocessing\\__init__.py',
    'PYMODULE'),
+  ('tracemalloc',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\Lib\\tracemalloc.py',
+   'PYMODULE'),
+  ('stringprep',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\Lib\\stringprep.py',
+   'PYMODULE'),
   ('getpass',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\Lib\\getpass.py',
@@ -586,14 +594,6 @@
   ('http.cookiejar',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\Lib\\http\\cookiejar.py',
-   'PYMODULE'),
-  ('stringprep',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\Lib\\stringprep.py',
-   'PYMODULE'),
-  ('tracemalloc',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.752.0_x64__qbz5n2kfra8p0\\Lib\\tracemalloc.py',
    'PYMODULE'),
   ('_py_abc',
    'C:\\Program '
