@@ -1,8 +1,6 @@
-build/distribuirpo/Analysis-00.toc
-build/distribuirpo/distribuirpo.pkg
-build/distribuirpo/EXE-00.toc
-build/distribuirpo/PKG-00.toc
-build/distribuirpo/PYZ-00.toc
-build/distribuirpo/warn-distribuirpo.txt
-build/distribuirpo/xref-distribuirpo.html
-dist/distribuirpo.exe
+*.toc
+*.pkg
+*.toc
+*/warn-distribuirpo.txt
+*/xref-distribuirpo.html
+*.exe
