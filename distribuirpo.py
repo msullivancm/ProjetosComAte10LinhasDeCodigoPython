@@ -1,6 +1,8 @@
 #!/usr/bin/env python
+# encoding: utf-8
+# encoding: iso-8859-1
+# encoding: win-1252
 
-# coding: utf-8
 import os
 
 import shutil
