@@ -10,6 +10,8 @@ from six.moves import configparser as ConfigParser
 from configparser import ExtendedInterpolation 
 
 """ Para gerar o executável devemos:
+pip3 install tqdm
+pip3 install six
 pip3 install pyinstaller
 python -m PyInstaller --onefile distribuirpo.py"""
 
