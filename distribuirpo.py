@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
+# coding: cp1252
+
 import os
 import shutil
 from datetime import datetime
@@ -197,5 +199,6 @@ try:
     criaDirDataHoraDestAPOs(dirDataHoraDestApos)
     copiaAPOparaDest(dirDataHoraDestApos)
     substCaminhoRpo(aInis, dirDataHoraDestApos, arqIni)
+    input("Tecle qualquer tecla para encerrar.")
 except OSError as err:
     print(err)
