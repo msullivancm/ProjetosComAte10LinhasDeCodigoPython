@@ -1,0 +1,280 @@
+{
+  "seguranca": {
+    "auth": [
+      {
+        "chave": "Authorization",
+        "token": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NzI5ODQ4MzgsIm5iZiI6MTU3Mjk4NDgzOSwiZXhwIjoxNTczMDI4MDM4LCJkYXRhIjp7ImxvZ2luIjoiZGVybGFuZHlAbW9iaWxlc2F1ZGUuY29tLmJyIn19.dzJOQhSG8pJx-l6WDDgMVszFsKB26PsIjF4rB1TnWrk"
+      },
+      {
+        "chave": "Authorization-Custom",
+        "token": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NzI5ODQ4MzgsIm5iZiI6MTU3Mjk4NDgzOSwiZXhwIjoxNTczMDI4MDM4LCJkYXRhIjp7ImxvZ2luIjoiZGVybGFuZHlAbW9iaWxlc2F1ZGUuY29tLmJyIn19.dzJOQhSG8pJx-l6WDDgMVszFsKB26PsIjF4rB1TnWrk",
+        "expiracao": 1574366666921
+      }
+    ]
+  },
+  "usuarioLogado": {
+    "permissoes": [
+      {
+        "funcionalidade": "0",
+        "acesso": true,
+        "mensagemBloqueio": null,
+        "ocultar": false
+      }
+    ],
+    "login": "123",
+    "chaveUnica": "101012",
+    "contato": {
+      "email": "geraldo@mobilesaude.com.br",
+      "telefoneCelular": "27999826284",
+      "telefoneFixo": "2733778899"
+    },
+    "esquemaCor": "esquema-premium",
+    "integracao": {
+      "xpto": "voluptatibus",
+      "xyz": "quibusdam",
+      "abcdef": 9288701
+    }
+  },
+  "beneficiarios": [
+    {
+      "chaveUnica": "101012",
+      "integracao": {
+        "xpto": "voluptatibus",
+        "xyz": "quibusdam",
+        "abcdef": 9288701
+      },
+      "dadosPessoais": {
+        "nome": "Geraldo Felix Junior",
+        "dataNascimento": "2017-11-05",
+        "cpf": "92188083970",
+        "sexo": {
+          "codigo": "F",
+          "descricao": "Feminino"
+        },
+        "contato": {
+        "email": "geraldo@mobilesaude.com.br",
+        "telefoneCelular": "27999826284",
+        "telefoneFixo": "2733778899"
+        },
+        "estadoCivil": {
+          "codigo": "C",
+          "descricao": "Casado"
+        }
+      },
+      "dadosDoContrato": {
+        "numeroContrato": "99991"
+      },
+      "dadosDoPlano": {
+        "beneficiario": true,
+        "idPlano": "01",
+        "descricao": "Plano Básico",
+        "registroAns": "999.999/99-9",
+        "segmentacao": "Ambulatorial + Hospitalar com obstetrícia",
+        "acomodacao": "Individual",
+        "tipoContratacao": "Plano Coletivo Empresarial",
+        "regulamentacao": "Plano Regulamentado",
+        "abrangencia": "Estadual",
+        "modalidadeCobranca": "Pós-pagamento",
+        "padraoConforto": "",
+        "participativo": false,
+        "dataInicioVigenciaPlano": "2012-01-01",
+        "dataFinalCpt": "Não há",
+        "matricula": "2320170425162943-0",
+        "matriculaAntiga": null,
+        "matriculaFuncionario": null,
+        "tipoUsuario": {
+          "codigo": "D",
+          "descricao": "Dependente"
+        },
+        "grauParentesco": {
+          "codigo": "01",
+          "descricao": "Conjuge"
+        },
+        "redeAtendimento": {
+          "codigo": "01",
+          "descricao": "XPTO"
+        },
+        "carencias": [
+          {
+            "tipoServico": "ES - Atendimentos Ambulatoriais",
+            "carencia": "2012-12-31"
+          },
+          {
+            "tipoServico": "ES - Internações e Outros Procedimentos",
+            "carencia": "2012-12-31"
+          },
+          {
+            "tipoServico": "ES - Partos a Termo",
+            "carencia": "2012-12-31"
+          },
+          {
+            "tipoServico": "ES - Odontologia",
+            "carencia": "2012-12-31"
+          }
+        ]
+      },
+      "cartao": {
+        "modeloCartao": "plano_basico",
+        "numeroCartao": "00010002000001000",
+        "validade": "2021-02-15",
+        "via": 1,
+        "numeroCns": "999999999999999",
+        "apresentaCartaoVirtual": true,
+        "nomeCartao":"Geraldo F. Junior",
+        "nomeSocialCartao":"Geraldo F. Junior",
+        "operadoraContratada":"XPTO",
+        "convenioAnsContratada":"123123",
+        "seed":"123123123123",
+        "convenioAbrangenciaVerso":"São Paulo, Guarulhos, Santo André, São Bernardo,São Caetano, Diadema, Mauã, Ribeirão Pires"
+      },
+      "bloqueio": {
+        "bloqueado": true,
+        "dataBloqueio": "2012-01-01",
+        "motivo": "desligamento da empresa contratante"
+      },
+      "custom": 
+      {
+        "minha_chave_customizada": "Meu valor customizado",
+        "minha_chave_customizada_2": "Meu valor customizado 2",
+        "minha_chave_customizada_3": "Meu valor customizado 3"
+      }
+    }
+  ],
+  "profissionaisSaude": [
+    {
+      "nome": "Derlandy Belchior",
+      "chaveProfissionalSaude": "63718245",
+      "conselhoRegional": "63718245",
+      "siglaConselhoRegional": "CRM",
+      "estadoConselhoRegional": "ES",
+      "titulo": "Dr",
+      "sexo": "M",
+      "dataNascimento": "1985-01-01",
+      "cpf": "99999999900",
+      "celular": "27999826284",
+      "especialidades": [
+        {
+          "cboEspecialidadeId": "2.2.5.1.20",
+          "cboEspecialidadeDescricao": "Cardiologia"
+        }
+      ],
+      "codigoContrato": "00100200300400500609",
+      "email": "derlandy@mobilesaude.com.br"
+    }
+  ],
+  "contratos": [
+    {
+      "descricaoContrato": "Plano Básico",
+      "numeroContrato": "00100200300400500609",
+      "empresaContratante": {
+        "codigo": "03",
+        "descricao": "Mobile Saúde"
+      },
+      "tipoPessoa": {
+        "codigo": "J",
+        "descricao": "Pessoa Jurídica"
+      },
+      "tipoRelacionamento": {
+        "codigo": "3",
+        "descricao": "Responsavel financeio"
+      },
+      "tipoContratante": {
+        "codigo": "3",
+        "descricao": "Empresa"
+      },
+      "dataInicioVigenciaContrato": "2012-01-01",
+      "dadosTitular": {
+        "matricula": "2320170425162943-0",
+        "nome": "Derlandy Belchior",
+        "email": "derlandy@mobilesaude.com.br",
+        "telefone": "8646166114",
+        "celular": "27999826284",
+        "cpf": "92188083970"
+      }
+    },
+    {
+      "descricaoContrato": "Plano Gold Familia",
+      "numeroContrato": "00100200300400500608",
+      "empresaContratante": {
+        "codigo": "03",
+        "descricao": "Mobile Saúde"
+      },
+      "tipoPessoa": {
+        "codigo": "J",
+        "descricao": "Pessoa Jurídica"
+      },
+      "tipoRelacionamento": {
+        "codigo": "3",
+        "descricao": "Responsavel financeio"
+      },
+      "tipoContratante": {
+        "codigo": "3",
+        "descricao": "Empresa"
+      },
+      "dataInicioVigenciaContrato": "2012-01-01",
+      "dadosTitular": {
+        "matricula": "2320170425162943-0",
+        "nome": "Derlandy Belchior",
+        "email": "derlandy@mobilesaude.com.br",
+        "telefone": "8646166114",
+        "celular": "27999826284",
+        "cpf": "92188083970"
+      }
+    },
+    {
+      "descricaoContrato": "Plano Sênior",
+      "numeroContrato": "00100200300400500607",
+      "tipoPessoa": {
+          "codigo": "F",
+          "descricao": "Pessoa Física"
+      },
+        "empresaContratante": {
+        "codigo": "03",
+        "descricao": "Mobile Saúde"
+      },
+        "tipoRelacionamento": {
+            "codigo": "3",
+            "descricao": "Responsavel financeio"
+      },
+      "tipoContratante": {
+        "codigo": "2",
+        "descricao": "Empresa"
+      },
+      "dataInicioVigenciaContrato": "2012-01-01",
+      
+      "dadosTitular": {
+        "matricula": "2320170425162943-0",
+        "nome": "Derlandy Belchior",
+        "email": "derlandy@mobilesaude.com.br",
+        "telefone": "8646166114",
+        "celular": "27999826284",
+        "cpf": "92188083970"
+      }
+    }
+  ],
+  "segmentacao": [
+    {
+      "chaveSegmentacao": "Plano",
+      "idSegmento": "0101",
+      "descricaoSegmento": "Plano básico"
+    },
+    {
+      "chaveSegmentacao": "Tipo de usuário",
+      "idSegmento": "T",
+      "descricaoSegmento": "Titular"
+    }
+  ],
+  "mosia": {
+    "codigoAgente": null,
+    "codigoFila": null,
+    "codigoPerfil": null
+  },
+  "agenteRelacionamento": {
+    "nome": "Salomé Irene Godói Jr.",
+    "telefone": "34940972035",
+    "whatsapp": "47984672759",
+    "email": "carolina.mascarenhas@salas.com.br",
+    "linkFoto": "https://randomuser.me/api/portraits/women/17.jpg",
+    "tituloApresentacao": "Beneficiário"
+  }
+}
